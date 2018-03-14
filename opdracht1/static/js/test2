@@ -1,0 +1,50 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT * WHERE { 
+  {
+    ?cho dc:type "foto"^^xsd:string .
+    ?cho dc:title ?title .
+    ?cho foaf:depiction ?img .
+    ?cho dc:date ?date .
+  } UNION { 
+    ?cho dc:type "affiche"^^xsd:string .
+    ?cho dc:title ?title .
+    ?cho foaf:depiction ?img .
+    ?cho dc:date ?date .
+  }  
+}
+
+limit 100
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT * WHERE {
+    <http://beeldbank.amsterdam.nl/afbeelding/B00000025509> ?pred ?obj .
+} 
+LIMIT 10
+
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT * WHERE { 
+    {
+        ?cho dc:type "foto"^^xsd:string .
+        ?cho dc:title ?title .
+        ?cho foaf:depiction ?img .
+        ?cho dc:date ?date .
+        filter contains(?title, "muziek") .
+    } UNION { 
+        ?cho dc:type "affiche"^^xsd:string .
+        ?cho dc:title ?title .
+        ?cho foaf:depiction ?img .
+        ?cho dc:date ?date .
+        filter contains(?title, "muziek") .
+    }  
+}
+LIMIT 100
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT * WHERE {
+  <http://beeldbank.amsterdam.nl/afbeelding/OSIM00010000164> ?pred ?obj .
+} 
+LIMIT 10

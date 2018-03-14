@@ -1,0 +1,126 @@
+body {
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+    margin: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5em, 1fr));
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+}
+
+section {
+    display: none;
+}
+
+nav, nav ul, nav a {
+    width: 100%;
+}
+
+nav, nav ul {
+    display: flex;
+}
+
+.card {
+    border-radius: 0.3em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    overflow: hidden;
+    max-height: 25em;
+    position: relative;
+    display: block;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 25px 0px rgba(0,0,0,0.5);
+}
+
+.card h2 {
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;  
+    z-index: 1;
+}
+
+.card img {
+    margin-bottom: -10px;
+    transition: 0.3s ease;
+}
+
+.covers:after {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(165, 165, 165, 0) 0%, rgba(0, 0, 0, 0.77) 100%);
+    /* background: rgba(0, 0, 0, 0.500); */
+    position: absolute;
+}
+
+nav {
+    justify-content: center;
+    /* background: linear-gradient(to right, #1ab8c9 0%,#411E97 100%);  */
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 0.25em;
+    margin-bottom: 2em;
+    overflow: hidden;
+}
+
+nav ul {
+    flex-flow: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+nav a {
+    padding: 20px 0;
+    display: block;
+    color: #fff;
+}
+
+nav li {
+    transition: all 0.3s ease;
+}
+
+nav li:hover {
+    filter: brightness(1.2);
+}
+
+nav li:nth-child(1) {
+    background: linear-gradient(to right, #1ab8c9 0%,#388dd5 100%); 
+}
+nav li:nth-child(2) {
+    background: linear-gradient(to right, #388DD5 0%,#4859C8 100%);
+}
+nav li:nth-child(3) {
+    background: linear-gradient(to right, #4859C8 0%,#411E97 100%);
+}
+
+#start {
+    background-color: #f2f2f2;
+}
+
+#best-practises {
+    background-color: #e2ab11;
+}
+
+.active {
+    display: block;
+}
