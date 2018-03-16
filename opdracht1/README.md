@@ -18,7 +18,7 @@
 * Minifyen van de Javascript (en CSS).
 
 ### CSS
-* Breekt wanneer 'display: grid;' uitgezet wordt. Grid is namelijk niet bruikbaar op elke browser (support wordt wel steeds beter).
+* Breekt wanneer 'display: grid;' uitgezet wordt. Grid is namelijk half bruikbaar op IE-11.
 
 #### Kleur
 * Alles is nog goed leesbaar, ongeacht het type kleurenblindheid. 
@@ -41,3 +41,5 @@
 
 #### Screenreader.
 * -
+
+Kan niet op GitHub komen met VirtualBox IE10
