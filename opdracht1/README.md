@@ -3,6 +3,9 @@
 
 ## Opdracht 1 - Progressive Enhancement
 
+## Project
+https://jamalvr.github.io/wafs/#uiux
+
 #### Afbeeldingen
 * Toevoegen van een 'Alt' en 'Titel' tag voor accessibility.
 ** Stylen van 'Alt' attributen.
@@ -28,18 +31,19 @@
 * Zware website, vooral door de afbeeldingen (wordt ook al behandeldin het kopje afbeeldingen).
 
 #### Cookies
-* -
+* Maak geen gebruik van cookies.
 
 #### Local Storage
-* -
+* Maak geen gebruik van local storage.
 
 #### Muis/Trackpad disabled
 * Slechte focus states. Zijn erg onduidelijk door het huidige kleurgebruik.
 
 #### Testen in het device lab
-* -
+* Nog testen via device lab.
 
 #### Screenreader.
-* -
+* Nog testen via screenreader.
 
-Kan niet op GitHub komen met VirtualBox IE10
+## To do's
+* Kan niet op GitHub komen met VirtualBox IE10
