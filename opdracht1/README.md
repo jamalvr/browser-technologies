@@ -14,7 +14,11 @@
 * Er kunnen SVG's toegevoegd worden om de usability en readability te verbeteren.
 
 #### Javascript
-* Niet bruikbaar zonder Javascript (yet)
+* Niet bruikbaar zonder Javascript (yet).
+* Minifyen van de Javascript (en CSS).
+
+### CSS
+* Breekt wanneer 'display: grid;' uitgezet wordt. Grid is namelijk niet bruikbaar op elke browser (support wordt wel steeds beter).
 
 #### Kleur
 * Alles is nog goed leesbaar, ongeacht het type kleurenblindheid. 
@@ -36,4 +40,4 @@
 * -
 
 #### Screenreader.
-*
+* -
