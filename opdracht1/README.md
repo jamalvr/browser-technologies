@@ -46,4 +46,7 @@ https://jamalvr.github.io/wafs/#uiux
 * Nog testen via screenreader.
 
 ## To do's
-* Kan niet op GitHub komen met VirtualBox IE10
+* Kan niet op GitHub komen met VirtualBox IE10.
+* Afbeeldingen toevoegen.
+* Code snippets van updates toevoegen.
+* Teksten en uitleg uitbreiden.
