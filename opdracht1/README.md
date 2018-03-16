@@ -14,7 +14,7 @@
 * Er kunnen SVG's toegevoegd worden om de usability en readability te verbeteren.
 
 #### Javascript
-* Niet bruikbaar zonder Javascript (yet).
+* Niet bruikbaar zonder Javascript.
 * Minifyen van de Javascript (en CSS).
 
 ### CSS
