@@ -1,0 +1,32 @@
+.modal {
+    /* Hiding modal */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    /* Styling modal */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10000;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    background: #fff;
+    max-width: 500px;
+    padding: 20px;
+}
+  
+.modal:target {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
