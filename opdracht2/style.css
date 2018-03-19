@@ -9,20 +9,54 @@ header, #tab1, #tab2, #tab3 {
     max-width: 988px;
 }
 
-/* Header */
-header {
-    background-color: #f2f2f2;
-}
-
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0 0 10px 0;
 }
 
+/* Header */
+header {
+    background-color: pink;
+}
+
 /* navigation */
+nav {
+    background-color: #f2f2f2;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+
+    /* flex */
+    display: flex;
+}
+
+ul li {
+    text-align: center;
+
+    /* flex */
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+ul a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+}
+
+ul a.active {
+    background-color: #fff;
+}
+
+/* content */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
 }
 
 #tab1 {
