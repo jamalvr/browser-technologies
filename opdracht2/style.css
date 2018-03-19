@@ -1,5 +1,32 @@
-/* #tab1 {
-    background-color: blue;
+/* General style */
+header, #tab1, #tab2, #tab3 {
+    padding: 20px;
+}
+
+.container {
+    display: block;
+    margin: auto;
+    max-width: 988px;
+}
+
+/* Header */
+header {
+    background-color: #f2f2f2;
+}
+
+h1, h2 {
+    margin: 0 0 10px 0;
+}
+
+/* navigation */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tab1 {
+    background-color: green;
     color: #fff;
 }
 
@@ -11,4 +38,4 @@
 #tab3 {
     background-color: red;
     color: #fff;
-} */
+}
