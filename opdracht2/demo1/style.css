@@ -1,16 +1,29 @@
 /* General style */
-header, #tab1, #tab2, #tab3 {
+body {
+    margin: 0;
+    background-color: #fafafa;
+    font-family: sans-serif;
+}
+
+header, .content-wrapper {
     padding: 20px;
 }
 
 .container {
     display: block;
     margin: auto;
+    background-color: #fff;
     max-width: 988px;
+
+    /* box shadow with pre-fix */
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 10px 0;
+    font-weight: bold;
 }
 
 /* Header */
@@ -34,10 +47,18 @@ ul {
 
 ul li {
     text-align: center;
+}
 
-    /* flex */
-    flex-grow: 1;
-    flex-basis: 0;
+/* flex support */
+@supports (display: flex) {
+    ul {
+        display: flex;
+    }
+
+    ul li {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
 }
 
 ul a {
@@ -50,6 +71,12 @@ ul .active {
     background-color: #fff;
 }
 
+/* header */
+.content-header {
+    max-height: 250px;
+    object-fit: cover;
+}
+
 /* content */
 .content {
     display: none;
@@ -59,17 +86,24 @@ ul .active {
     display: block;
 }
 
+.content img {
+    /* width: 100%; */
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
 #tab1 {
-    background-color: green;
-    color: #fff;
+    /* background-color: green;
+    color: #fff; */
 }
 
 #tab2 {
-    background-color: #000;
-    color: #fff;
+    /* background-color: #000;
+    color: #fff; */
 }
 
 #tab3 {
-    background-color: red;
-    color: #fff;
+    /* background-color: red;
+    color: #fff; */
 }
