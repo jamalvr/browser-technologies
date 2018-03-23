@@ -5,7 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BT - Demo 2</title>
-    <link rel="stylesheet" href="style.css" type="text/css"></link>
+    <!-- <link rel="stylesheet" href="style.css" type="text/css"></link> -->
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 50em;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;  
+        }
+
+        li > a {
+            display: block;
+            max-height: 5em;
+            overflow: hidden;
+            margin-bottom: 0.5em;
+
+            /* enhancement */
+            transition: 0.3s;
+        }
+
+        li > a:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            /* Hiding modal */
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            /* Styling modal */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 10000;
+        }
+
+        .modal-container {
+            background: #fff;
+            max-width: 500px;
+            padding: 20px;
+            display: block;
+            margin: auto;
+        }
+        
+        .modal:target {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @supports (object-fit: cover) {
+            .modal img {
+                max-height: 10em;
+                object-fit: cover;
+            }
+        }
+
+        /* Flex support */
+        @supports (display: flex) {
+            .modal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- start - body container -->

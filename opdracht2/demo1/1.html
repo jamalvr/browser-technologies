@@ -5,7 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BT - Demo 1</title>
-    <link rel="stylesheet" href="style.css" type="text/css"></link>
+    <!-- <link rel="stylesheet" href="style.css" type="text/css"></link> -->
+
+    <style>
+        /* General style */
+        body {
+            margin: 0;
+            background-color: #fafafa;
+            font-family: sans-serif;
+        }
+
+        header, .content-wrapper {
+            padding: 20px;
+        }
+
+        .container {
+            display: block;
+            margin: auto;
+            background-color: #fff;
+            max-width: 988px;
+
+            /* box shadow with pre-fix */
+            -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        /* Header */
+        header {
+            background-color: pink;
+        }
+
+        /* navigation */
+        nav {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            /* flex */
+            display: flex;
+        }
+
+        ul li {
+            text-align: center;
+        }
+
+        /* flex support */
+        @supports (display: flex) {
+            ul {
+                display: flex;
+            }
+
+            ul li {
+                flex-grow: 1;
+                flex-basis: 0;
+            }
+        }
+
+        ul a {
+            display: block;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        ul .active {
+            background-color: #fff;
+        }
+
+        /* header */
+        .content-header {
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        /* content */
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content img {
+            /* width: 100%; */
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <!-- start - body container -->
@@ -108,6 +205,35 @@
     <!-- end - body container -->
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        (function(){
+            console.log('hai');
+
+            var el = document.getElementById('tabs');
+
+            function onTabClick(event){
+                console.log('ik doe het ook');
+
+                var selectActives = document.querySelectorAll('.active');
+                var selectContent = document.querySelectorAll('.content');
+
+                // deactivate existing active tab and panel
+                for (var i=0; i < selectActives.length; i++){
+                    console.log(selectActives)
+                    selectActives[i].className = selectActives[i].className.replace(' active', '');
+                }
+
+                // activate new tab and panel
+                event.target.className += ' active';
+                document.getElementById(event.target.href.split('#')[1]).className += ' active';
+
+                event.preventDefault();
+            }
+
+            el.addEventListener('click', onTabClick, false);
+        })();
+    </script>
+
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
