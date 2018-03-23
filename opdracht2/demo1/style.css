@@ -48,21 +48,29 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -4px;
 }
 
 ul li {
     text-align: center;
+    width: 33.333%;
+    float: left;
 }
 
 /* flex support */
 @supports (display: flex) {
     ul {
         display: flex;
+        margin-bottom: 0;
     }
 
     ul li {
         flex-grow: 1;
         flex-basis: 0;
+        width: auto;
+        float: none;
     }
 }
 

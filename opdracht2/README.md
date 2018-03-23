@@ -1,22 +1,71 @@
 # Browser Technologies
-//Robuuste, toegankelijke websites leren bouwen … 
+// Robuuste, toegankelijke websites leren bouwen … 
 
-[Demo 1](https://jamalvr.github.io/browser-technologies/opdracht2/demo1/1.html)
-[Demo 2](https://jamalvr.github.io/browser-technologies/opdracht2/demo2/2.html#)
-
+[Demo 1 - Tabs](https://jamalvr.github.io/browser-technologies/opdracht2/demo1/1.html)
+[Demo 2 - Modal](https://jamalvr.github.io/browser-technologies/opdracht2/demo2/2.html#)
 
 ## Opdracht 2 - 1, 2, 3 Feature Detectie
-
 ### CSS Feature: Object fit
-Object fit is used to style images without losing their display ratios (the way I use it with the 'cover' property).
-It is widely support by most modern browsers, IE and Edge are the only browsers that don't support Object fit.
+Object fit is used to style images without losing their display ratios (see `object-fit: cover`).
+It is widely support by most modern browsers, IE and Edge are the only browsers that don't support `Object fit.`
 
 [Can I use: Object fit](https://caniuse.com/#search=object-fit)
+![Can I use](screenshots/caniuse-objectfit.png)
+
+Images in older browsers that use `object-fit` are replaced with `height: auto;`. That way the images will keep the right display ratios with the cost of taking up more space.
+
+```
+@supports (object-fit: cover) { 
+    .content img {
+        max-height: auto;
+    }
+}
+```
+
+### CSS Feature: Display flex
+Display flex is support every modern browser. 'Older' browser require their respective pre-fix.
+* IE 10 -ms- 
+* Chrome 21.0 -webkit-	
+* Firefox 18.0 -moz-
+* Safari 6.1 -webkit-
+
+To prevent `display: flex;` from breaking when used by older browsers I also used the `@support` rule to have a fallback property. This is not necesserily needed since `display: flex` can easily be replaced by `display: block;`, since they use the same property name.
+
+```
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -4px;
+}
+
+ul li {
+    text-align: center;
+    width: 33.333%;
+    float: left;
+}
+
+/* flex support */
+@supports (display: flex) {
+    ul {
+        display: flex;
+        margin-bottom: 0;
+    }
+
+    ul li {
+        flex-grow: 1;
+        flex-basis: 0;
+        width: auto;
+        float: none;
+    }
+}
+```
 
 #### Device lab
 
 
-### CSS Feature: Display flex
 
 - Per feature: Zoek uit hoe je deze kunt testen. Verzamel uitleg en artikelen. Bouw een (kleine) progressive enhanced demo (zonder extra tools, gewoon in 1 HTML file, zo simpel mogelijk). Test de feature (en fallback) op verschillende browsers en het device lab.Let op: Gebruik van polyfills is niet toegestaan.
 
