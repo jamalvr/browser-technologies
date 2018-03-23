@@ -1,13 +1,13 @@
 # Browser Technologies
 // Robuuste, toegankelijke websites leren bouwen … 
 
-[Demo 1 - Tabs](https://jamalvr.github.io/browser-technologies/opdracht2/demo1/1.html)
-[Demo 2 - Modal](https://jamalvr.github.io/browser-technologies/opdracht2/demo2/2.html#)
+* [Demo 1 - Tabs](https://jamalvr.github.io/browser-technologies/opdracht2/demo1/1.html)
+* [Demo 2 - Modal](https://jamalvr.github.io/browser-technologies/opdracht2/demo2/2.html#)
 
 ## Opdracht 2 - 1, 2, 3 Feature Detectie
+
 ### CSS Feature: Object fit
-Object fit is used to style images without losing their display ratios (see `object-fit: cover`).
-It is widely support by most modern browsers, IE and Edge are the only browsers that don't support `Object fit.`
+Object fit is used to style images without losing their display ratios (see `object-fit: cover`). It is widely support by most modern browsers, IE and Edge are the only browsers that don't support `Object fit.`
 
 [Can I use: Object fit](https://caniuse.com/#search=object-fit)
 ![Can I use](screenshots/caniuse-objectfit.png)
@@ -63,8 +63,13 @@ ul li {
 }
 ```
 
-#### Device lab
+### Device lab
+#### Demo 1
+The first demo worked on three devices that I have tested in the device lab. The only problem was the `object-fit` css property when used by the windows tablet in the device lab. The images lost their display ratio which distored the images because they where forced to become shorter. This was fixed by adding the `@support` rule and defining fallback properties to define the right height for images when `object-fit` is not supported.
 
+![Device 1](screenshots/demo1.1.jpg)
+![Device 2](screenshots/demo1.2.jpg)
+![Device 3](screenshots/demo1.3.jpg)
 
 
 - Per feature: Zoek uit hoe je deze kunt testen. Verzamel uitleg en artikelen. Bouw een (kleine) progressive enhanced demo (zonder extra tools, gewoon in 1 HTML file, zo simpel mogelijk). Test de feature (en fallback) op verschillende browsers en het device lab.Let op: Gebruik van polyfills is niet toegestaan.
