@@ -78,13 +78,13 @@ ul .active {
 }
 
 /* content */
-.content {
+/* .content {
     display: none;
 }
 
 .content.active {
     display: block;
-}
+} */
 
 .content img {
     /* width: 100%; */

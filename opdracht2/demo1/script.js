@@ -1,5 +1,3 @@
-
-
 // Source: https://gist.github.com/Jiert/bbddb482c28f6c79cccc
 
 (function(){
@@ -46,34 +44,38 @@
         //     }
         // }   
     // }
+    
+    function addStyle() {
+        var selectContent = document.querySelectorAll('.content');
+        
+        for (var i=0; i < selectContent.length; i++) {
+            // console.log(selectContent[i].classList.contains('active'));
+            if (selectContent[i].classList.contains('active')) {
+                selectContent[i].style.display = 'block';
+            } else {
+                selectContent[i].style.display = 'none';
+            }
+        }  
+    }
 
     function onTabClick(event){
-        console.log('ik doe het ook');
-
         var selectActives = document.querySelectorAll('.active');
-        var selectContent = document.querySelectorAll('.content');
 
         // deactivate existing active tab and panel
         for (var i=0; i < selectActives.length; i++){
-            console.log(selectActives)
             selectActives[i].className = selectActives[i].className.replace(' active', '');
         }
-
-        // for (var i=0; i < selectContent.length; i++) {
-        //     console.log(selectContent[i].classList.contains('active'));
-        //     if (selectContent[i].classList.contains('active') && selectContent[i].classList.contains('content')) {
-        //         selectContent[i].style.display = 'block';
-        //     } else {
-        //         selectContent[i].style.display = 'none';
-        //     }
-        // }  
 
         // activate new tab and panel
         event.target.className += ' active';
         document.getElementById(event.target.href.split('#')[1]).className += ' active';
 
         event.preventDefault();
+
+        addStyle();
     }
 
-    el.addEventListener('click', onTabClick, false);
+    addStyle();
+
+    el.addEventListener('click', onTabClick, true);
 })();
