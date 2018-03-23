@@ -1,7 +1,6 @@
 // Source: https://gist.github.com/Jiert/bbddb482c28f6c79cccc
 
 (function(){
-
     console.log('hai');
 
     var el = document.getElementById('tabs');
@@ -17,9 +16,10 @@
                 selectContent[i].style.display = 'none';
             }
         }  
+        event.preventDefault();
     }
 
-    function onTabClick(event){
+    function onTabClick(){
         var selectActives = document.querySelectorAll('.active');
 
         // deactivate existing active tab and panel
@@ -31,11 +31,12 @@
         event.target.className += ' active';
         document.getElementById(event.target.href.split('#')[1]).className += ' active';
 
-        event.preventDefault();
-
+        // Start new loop to set the right styles 
         addStyle();
+        event.preventDefault();
     }
 
+    
     addStyle();
 
     el.addEventListener('click', onTabClick, true);
