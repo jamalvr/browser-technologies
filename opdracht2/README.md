@@ -72,7 +72,7 @@ The first demo worked on three devices that I have tested in the device lab. The
 ![Device 3](screenshots/demo1.3.jpg)
 
 
-- Per feature: Zoek uit hoe je deze kunt testen. Verzamel uitleg en artikelen. Bouw een (kleine) progressive enhanced demo (zonder extra tools, gewoon in 1 HTML file, zo simpel mogelijk). Test de feature (en fallback) op verschillende browsers en het device lab.Let op: Gebruik van polyfills is niet toegestaan.
+- Per feature: Zoek uit hoe je deze kunt testen. Verzamel uitleg en artikelen. Bouw een (kleine) progressive enhanced demo (zonder extra tools, gewoon in 1 HTML file, zo simpel mogelijk). Test de feature (en fallback) op verschillende browsers en het device lab.Let op: Gebruik van polyfills is niet toegestaan.l
 
 - Post je 6 afzonderlijke demo’s op GitHub met uitleg in een README file. Wat is de feature, welke browsers/devices ondersteunen deze wel/niet, hoe zorg je dat de fallback nuttig is?
 
