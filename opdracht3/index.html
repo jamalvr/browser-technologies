@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>WT - Assignement 3</title>
     <link rel="stylesheet" href="wt3-style.css">
@@ -9,33 +10,35 @@
     <main>
         <header class="search-header">
             <h1>Contacts</h1>
-            <input id="search" type="search" action="/" placeholder="Search contacts..."/>
+            <form action="results.html" method="GET">
+                <input id="search" type="search" action="/" placeholder="Search contacts..." />
+            </form>
         </header>
         <div class="contact-list">
-            <ol type="A">
+            <ol type="A" class="alphabet-list">
                 <!-- Letter A -->
                 <li>
-                    <ol type="a">
+                    <ol type="a" class="letter-list">
                         <li>
-                            <a href="#">
+                            <a href="monica-de-aarend.html">
                                 <img src="img/people/stock1-s.jpg" alt="Foto van Monica de Aarend">
-                                <span>Monica de Aarend</span>
+                                <span>Monica <strong class="surname">Aarend</strong></span>
                                 <img src="" alt="svg icon">
                             </a>
                         </li>
-                    
+
                         <li>
-                            <a href="#">
+                            <a href="/tom-de-abrikoos.html">
                                 <img src="img/people/stock2-s.jpg" alt="Foto van Tom de Abrikoos">
-                                <span>Tom de Abrikoos</span>
+                                <span>Tom <strong class="surname">de Abrikoos</strong></span>
                                 <img src="" alt="svg icon">
                             </a>
                         </li>
-                    
+
                         <li>
-                            <a href="#">
+                            <a href="/vincent-van-azijn.html">
                                 <img src="img/people/stock3-s.jpg" alt="Foto van Vincent van Azijn">
-                                <span>Vincent van Azijn</span>
+                                <span>Vincent <strong class="surname">van Azijn</strong></span>
                                 <img src="" alt="svg icon">
                             </a>
                         </li>
@@ -47,4 +50,5 @@
 
     <script src="wt3-script.js"></script>
 </body>
+
 </html>
