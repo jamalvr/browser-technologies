@@ -13,6 +13,9 @@ a {
     text-decoration: none;
     color: #323232;
     border: 1px solid #2c2c2c;
+
+    /* IE 9 support "In the separated model, adjacent cells each have their own distinct borders." */
+    border-collapse: separate;
 }
 
 /* Header with title & searchbar */
@@ -59,14 +62,6 @@ input[type=search]:focus {
     /* border-radius: 50px; */
     overflow: hidden;
     padding: 0.5em;
-
-    /* IE 9 support */
-    border-collapse: separate;
-
-    /* Prefix toevoegen voor oudere browsers */
-    transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
 }
 
 .hide {
