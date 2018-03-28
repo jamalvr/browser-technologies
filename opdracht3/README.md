@@ -16,7 +16,7 @@ Om het geheel wat aantrekkelijker te maken is er vervolgens stijling toegevoegd 
 
 Als kers op de taart is er vervolgens een javascript functie toegevoegd. Met deze functie hoeft te gebruiker niet meer te wachten op de server om te filteren. Dit kan nu live gedaan worden wanneer de gebruiker wat in typt in de search bar.
 
-![Box-shadow test](img/opbouw.png)
+![Opbouw](img/opbouw.png)
 
 ## De features/Browser technologies
 ### [CSS Flexible Box Layout Module (Display: flex;)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -35,8 +35,22 @@ De ``classList`` property haalt de classes op van een DOM element. De ``classLis
 
 ``classList`` wordt ook goed gesupport in nieuwe browsers. Wanneer je naar browsers ouder dan IE10 gaat is er geen support meer voor de property.
 
-![Box-shadow test](img/ieclasslist.png)
+![IE Classlist](img/ieclasslist.png)
 
+## Browsersupport
+### IE8 & IE9
+
+### IE10
+
+### Firefox 
+Op de laatste versie van Firefox werkt alles naar behoren.
+
+### Chrome
+
+### Safari
+Op safari werkt alles qua functionaliteit, op de stijling van het ``input`` element na. De searchbar gaat voor een gedeelte terug naar de originile stijling en verliest de extra hoogte en grotere ``font-size``.
+
+![safari input css bug](img/safaricssbug.png)
 
 Criteria
 - De code staat in een repository op GitHub
