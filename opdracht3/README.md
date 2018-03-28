@@ -9,11 +9,14 @@ Maak een demo op basis van een use case. Zorg dat alle gebruikers, met alle brow
 ## De core funtionaliteit
 Een lijst met contactpersonen waar op gefilterd kan worden aan de hand van een zoekbalk. Wanneer er op een contactpersoon geklikt wordt, kom je op een losse detailpagina met meer informatie over de desbetreffende persoon. Vanuit de detailpagina kan er contact opgenomen worden met de desbetreffende persoon of terug genavigeerd worden naar de homepagina.
 
-### HTML only structuur
+### De opbouw
+In eerst instantie wordt de zoekopdracht verstuurd via de server (in dit geval een nepserver met statische HTML). Vervolgens krijgt de gebruiker een lijst te zien met namen die aan de zoekopdracht voldoen. 
 
-### Toevoegen van de CSS
+Om het geheel wat aantrekkelijker te maken is er vervolgens stijling toegevoegd aan de lijst elementen. De searchbar is nu aanzienlijk groter, zodat daar ook als eerste de aandacht naartoe gaat. De list-items zijn nu ook een stuk compacter waardoor er nu meer contactpersonen in de lijst komen te staan.
 
-### Extra functionaliteit met Javascript
+Als kers op de taart is er vervolgens een javascript functie toegevoegd. Met deze functie hoeft te gebruiker niet meer te wachten op de server om te filteren. Dit kan nu live gedaan worden wanneer de gebruiker wat in typt in de search bar.
+
+![Box-shadow test](img/opbouw.png)
 
 ## De features/Browser technologies
 ### [CSS Flexible Box Layout Module (Display: flex;)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -34,9 +37,6 @@ De ``classList`` property haalt de classes op van een DOM element. De ``classLis
 
 ![Box-shadow test](img/ie8classlist.png)
 ![Box-shadow test](img/ie9classlist.png)
-
-
-
 
 
 Criteria
