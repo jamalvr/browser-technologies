@@ -7,7 +7,6 @@ Een van de mooiste principes van het web is dat het er echt is voor iedereen. Ie
 
 
 Het vak bestaat uit 3 opdrachten:
-
-1. [Het web is voor iedereen. Leren over Progressive enhancement](#)
-2. [Wat laat je zien als een browser of gebruiker 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt?](#)
-3. [Browser Technologies onderzoeken en implementeren als enhancement. Basic functionaliteit van een use case doorgronden.](#)
+1. [Het web is voor iedereen. Leren over Progressive enhancement](https://github.com/jamalvr/browser-technologies/tree/master/opdracht1)
+2. [Wat laat je zien als een browser of gebruiker 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt?](https://github.com/jamalvr/browser-technologies/tree/master/opdracht2)
+3. [Browser Technologies onderzoeken en implementeren als enhancement. Basic functionaliteit van een use case doorgronden.](https://github.com/jamalvr/browser-technologies/tree/master/opdracht3)

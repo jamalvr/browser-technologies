@@ -16,6 +16,10 @@ a {
 
     /* IE 9 support "In the separated model, adjacent cells each have their own distinct borders." */
     border-collapse: separate;
+
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
 }
 
 /* Header with title & searchbar */
