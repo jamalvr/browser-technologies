@@ -35,8 +35,7 @@ De ``classList`` property haalt de classes op van een DOM element. De ``classLis
 
 ``classList`` wordt ook goed gesupport in nieuwe browsers. Wanneer je naar browsers ouder dan IE10 gaat is er geen support meer voor de property.
 
-![Box-shadow test](img/ie8classlist.png)
-![Box-shadow test](img/ie9classlist.png)
+![Box-shadow test](img/ieclasslist.png)
 
 
 Criteria
