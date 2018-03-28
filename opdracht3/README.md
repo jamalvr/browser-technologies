@@ -38,19 +38,24 @@ De ``classList`` property haalt de classes op van een DOM element. De ``classLis
 ![IE Classlist](img/ieclasslist.png)
 
 ## Browsersupport
-### IE8 & IE9
+### IE8
+Er gaat in IE8 heel wat basic styling en functionaliteit verloren. De Javascript functie werkt niet meer, de box-shadows zijn vervangen door borders en de max-width op het container element met de ``margin: auto;`` is ook verdwenen. Dit komt waarschijnlijk omdat ik een ``main`` HTML element heb gebruikt. Verder werkt het qua functionaliteit nog wel. De gebruiker krijgt vooralsnog een lijst met contacten te zien waarmee gefilterd kan worden.
+
+![IE8 Test](img/ie8test.png)
+
+### IE9
 
 ### IE10
 
-### Firefox 
-Op de laatste versie van Firefox werkt alles naar behoren.
+### Major nieuwere browsers
+Om te kijken hoe de moderne browsersupport is, heb ik gekeken hoe de app functioneert op alle moderne browsers. Over het algemeen werkt zo goed als alles. Het grootste probleem met moderne browsers, is dat ze niet altijd hetzelfde omgaan met CSS regels en andere ingebouwde browserstyles meegeven. De styling die de browsers meegeven kunnen in sommige gevallen in de weg staan van de stijling die je zelf als frontender/designer meegeeft. Het is daarom extra belangrijk om er op te letten dat bijvoorbeeld ``:focus`` states altijd duidelijk zijn. 
 
-### Chrome
-
-### Safari
-Op safari werkt alles qua functionaliteit, op de stijling van het ``input`` element na. De searchbar gaat voor een gedeelte terug naar de originile stijling en verliest de extra hoogte en grotere ``font-size``.
-
+#### Chrome, Opera, Firefox, Edge & Safari
+Op Safari werkt alles qua functionaliteit, op de stijling van het ``input`` element na. De searchbar gaat voor een gedeelte terug naar de originile stijling en verliest de extra hoogte en grotere ``font-size``.
 ![safari input css bug](img/safaricssbug.png)
+
+Op Edge werkt alles zoas het moet horen. Het enige wat qua contrast een probleem kan opleveren voor de accesability is de grijze kleur, die als achtergrond functioneert van de suggesties in de searchbar.
+![Edge suggestion contrast](img/edgecontrast.png)
 
 Criteria
 - De code staat in een repository op GitHub

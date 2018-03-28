@@ -3,7 +3,7 @@ body {
     font-family: sans-serif;
 }
 
-main {
+.main {
     max-width: 45em;
     margin: 0 auto;
     font-size: 16px;
@@ -92,7 +92,7 @@ input[type=search]:focus {
 }
 
 /* box shadow */
-.detailpage main, input[type=search], .letter-list a {
+.detailpage .main, input[type=search], .letter-list a {
     border: 1px solid #323232;
 }
 
@@ -133,7 +133,7 @@ a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
     margin: 1.5em 1em;
 }
 
-.detailpage main {
+.detailpage .main {
     background-color: #fff;
     padding: 0 0 20px 0;
 }
