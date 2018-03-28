@@ -41,9 +41,12 @@ De ``classList`` property haalt de classes op van een DOM element. De ``classLis
 ### IE8
 Er gaat in IE8 heel wat basic styling en functionaliteit verloren. De Javascript functie werkt niet meer, de box-shadows zijn vervangen door borders en de max-width op het container element met de ``margin: auto;`` is ook verdwenen. Dit komt waarschijnlijk omdat ik een ``main`` HTML element heb gebruikt. Verder werkt het qua functionaliteit nog wel. De gebruiker krijgt vooralsnog een lijst met contacten te zien waarmee gefilterd kan worden.
 
-![IE8 Test](img/ie8test.png)
+![IE8 Test](img/ie8test.png){ width=50% }
 
 ### IE9
+De javascript functie wordt nog steeds niet ondersteund in IE9. Door de ``main`` aan te passen naar een ``<div class="main">`` wordt de stijling met de ``max-width`` en ``margin: auto`` nu wel meegenomen.
+
+![IE9 Test](img/ie9test.png){ width=50% }
 
 ### IE10
 
