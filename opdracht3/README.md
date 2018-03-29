@@ -68,6 +68,8 @@ Een layout module bedoelt voor het stijlen en positioneren van elementen. Het vo
 ### [Viewport Units (VH)](https://caniuse.com/#search=vh)
 Omdat ik een gradient `background` wil gebruiken en mijn lijst erg kort is, wil ik gebruik maken van `height: 100vh` zodat de body altijd de juiste hoogte heeft ongeacht de hoogte van de content. Om er voor te zorgen dat er altijd een achtergrond beschikbaar is, is er altijd een default background color aanwezig.
 
+![Gradient when VH available](img/gradientvh.png)
+
 ```
 body {
     background: #7db9e8;
