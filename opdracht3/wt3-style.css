@@ -47,7 +47,7 @@ input[type=search] {
     -moz-transition: all 0.3s ease;
 }
 
-input[type=search]:focus, .letter-list a:focus {
+input[type=search]:focus, .letter-list a:focus, a:focus {
     border-color: red;
     outline: none;
 }
