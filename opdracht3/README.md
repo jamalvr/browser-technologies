@@ -136,4 +136,6 @@ In principe werkt de website op elk device. Er zijn vooral nog enkele stijl issu
 
 De CSS featuredetect op bijvoorbeeld `box-shadow` is niet perse heel zinvol omdat de support heel groot is, maar kon hierdoor wel goed met de `@support` rule spelen om er voor te zorgen dat het contrast van de knoppen altijd goed werkt. Het voornaamste nadeel van de `@support` regel is dat het pas relatief laat gesupport wordt. Eigenlijk is het voornamelijk zinvol om CSS feature detects te doen bij CSS regels die nieuwer zijn dan `@support`.
 
+Progressive enhancement is toegepast op de website. Ik heb er voor gezorgd dat alles los van elkaar werkt en het is stapsgewijs verbeterd. De HTML structuur is netjes opgebouwd zodat er makkelijk CSS en Javascript toegevoegd kan worden.
+
  
