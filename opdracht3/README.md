@@ -65,6 +65,26 @@ Een layout module bedoelt voor het stijlen en positioneren van elementen. Het vo
 }
 ```
 
+### [Viewport Units (VH)](https://caniuse.com/#search=vh)
+Omdat ik een gradient `background` wil gebruiken en mijn lijst erg kort is, wil ik gebruik maken van `height: 100vh` zodat de body altijd de juiste hoogte heeft ongeacht de hoogte van de content. Om er voor te zorgen dat er altijd een achtergrond beschikbaar is, is er altijd een default background color aanwezig.
+
+```
+body {
+    background: #7db9e8;
+    font-family: sans-serif;
+}
+
+@supports (height: 100vh){
+    body {
+        background: -moz-linear-gradient(top, #7db9e8 1%, #7db9e8 1%, #47a0e5 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #7db9e8 1%,#7db9e8 1%,#47a0e5 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #7db9e8 1%,#7db9e8 1%,#47a0e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#47a0e5',GradientType=0 ); /* IE6-9 */
+        height: 100vh;
+    }
+}
+```
+
 ### [classList](https://caniuse.com/#search=classlist)
 De `classList` property haalt de classes op van een DOM element. De `classList` property leest in eerst instantie alleen in welke classes er in het element zitten. Om classes toe te voegen of te verwijderen kan er bijvoorbeeld `.add` en `.remo` achter `classList` gezet worden. 
 
