@@ -18,47 +18,104 @@ Als kers op de taart is er vervolgens een javascript functie toegevoegd. Met dez
 
 ## De features/Browser technologies
 ### [CSS Flexible Box Layout Module (Display: flex;)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-Een layout module bedoelt voor het stijlen en positioneren van elementen. Het voordeel is dat er veel mogelijkheden zijn met relatief weinig code voor de positionering en stijling. De blokken met ``display: flex;`` verdeeld in een 'main-axis' en een 'cross-axis'. Hierdoor is het bijvoorbeeld erg makkelijk om elementen zowel verticaal ``align-items: center;`` als horizontaal ``justify-content: center;`` te positioneren.
+Een layout module bedoelt voor het stijlen en positioneren van elementen. Het voordeel is dat er veel mogelijkheden zijn met relatief weinig code voor de positionering en stijling. De blokken met `display: flex;` verdeeld in een 'main-axis' en een 'cross-axis'. Hierdoor is het bijvoorbeeld erg makkelijk om elementen zowel verticaal `align-items: center;` als horizontaal `justify-content: center;` te positioneren.
 
 ![flexbox support](img/flexsupport.png)
 
+```
+.letter-list a {
+    display: block;
+}
+
+.letter-list img:first-child {
+    float: left;
+}
+
+.letter-list svg {
+    float: right;
+}
+
+@supports (display: flex) {
+    .letter-list a {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .letter-list svg { 
+        align-self: end;
+    }
+}
+```
+
 ### [Box-shadow](https://caniuse.com/#search=box-shadow)
-``Box-shadow`` wordt ondersteund in alle moderne browser. Alleen oudere versies voor IE9 bieden geen support. Om vooralsnog te spelen met CSS properties en er voor te zorgen dat ook oudere browsers en juiste user experience krijgen, zijn er borders toegevoegd wanneer de box-shadow niet beschikbaar is. Dit is gedaan met de ``@support`` regel op alle verschillende type ``box-shadow`` die zijn gebruikt.
+`Box-shadow` wordt ondersteund in alle moderne browser. Alleen oudere versies voor IE9 bieden geen support. Om vooralsnog te spelen met CSS properties en er voor te zorgen dat ook oudere browsers en juiste user experience krijgen, zijn er borders toegevoegd wanneer de box-shadow niet beschikbaar is. Dit is gedaan met de `@support` regel op alle verschillende type `box-shadow` die zijn gebruikt.
 
 ![Box-shadow support](img/boxshadowsupport.png)
 ![Box-shadow test](img/boxshadowtest.png)
 
-### [classList](https://caniuse.com/#search=classlist)
-De ``classList`` property haalt de classes op van een DOM element. De ``classList`` property leest in eerst instantie alleen in welke classes er in het element zitten. Om classes toe te voegen of te verwijderen kan er bijvoorbeeld ``.add`` en ``.remo`` achter ``classList`` gezet worden. 
+```
+.detailpage .main, input[type=search], .letter-list a {
+    border: 1px solid #323232;
+}
 
-``classList`` wordt ook goed gesupport in nieuwe browsers. Wanneer je naar browsers ouder dan IE10 gaat is er geen support meer voor de property.
+@supports (box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)) {
+    .detailpage main, input[type=search], .letter-list a {
+        border: 1px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+}
+```
+
+### [classList](https://caniuse.com/#search=classlist)
+De `classList` property haalt de classes op van een DOM element. De `classList` property leest in eerst instantie alleen in welke classes er in het element zitten. Om classes toe te voegen of te verwijderen kan er bijvoorbeeld `.add` en `.remo` achter `classList` gezet worden. 
+
+`classList` wordt ook goed gesupport in nieuwe browsers. Wanneer je naar browsers ouder dan IE10 gaat is er geen support meer voor de property.
 
 ![IE Classlist](img/ieclasslist.png)
 
+Om er voor te zorgen dat de website niet breekt wanneer de `classList` property niet ondersteund wordt, is er een feature detect geschreven. Wanneer `classList` niet te vinden is in `document` valt de functionaliteit terug op de searchbar die via de server werkt.
+
+```
+if (document.documentElement.classList) {
+    function searchFunction() {...
+    }
+}
+```
+
+### Gebruikte Javascript die (bijna) overal wordt ondersteund
+- nog toevoegen
+
 ## Browsersupport
 #### IE8
-Er gaat in IE8 heel wat basic styling en functionaliteit verloren. De Javascript functie werkt niet meer, de box-shadows zijn vervangen door borders en de max-width op het container element met de ``margin: auto;`` is ook verdwenen. Dit komt waarschijnlijk omdat ik een ``main`` HTML element heb gebruikt. Verder werkt het qua functionaliteit nog wel. De gebruiker krijgt vooralsnog een lijst met contacten te zien waarmee gefilterd kan worden.
+Er gaat in IE8 heel wat basic styling en functionaliteit verloren. De Javascript functie werkt niet meer, de box-shadows zijn vervangen door borders en de max-width op het container element met de `margin: auto;` is ook verdwenen. Dit komt waarschijnlijk omdat ik een `main` HTML element heb gebruikt. Verder werkt het qua functionaliteit nog wel. De gebruiker krijgt vooralsnog een lijst met contacten te zien waarmee gefilterd kan worden.
 
 ![IE8 Test](img/ie8test.png)
 
 #### IE9
-De javascript functie wordt nog steeds niet ondersteund in IE9. Door de ``main`` aan te passen naar een ``<div class="main">`` wordt de stijling met de ``max-width`` en ``margin: auto`` nu wel meegenomen. De ``box-shadow`` property werkt hier alleen nog niet.
+De javascript functie wordt nog steeds niet ondersteund in IE9. Door de `main` aan te passen naar een `<div class="main">` wordt de stijling met de `max-width` en `margin: auto` nu wel meegenomen. De `box-shadow` property werkt hier alleen nog niet.
 
 ![IE9 Test](img/ie9test.png)
 
 #### IE10
-In IE10 werkt de ``box-shadow`` nog steeds niet. Dit komt hoogstwaarschijnlijk omdat de ``@support`` regel pas veel later gesupport wordt. Hierdoor zal de box-shadow alleen zichtbaar zijn in de nieuwere browsers die ook de ``@support`` regel ondersteunen. Verder werkt het qua javascript functionaliteit wel helemaal. Waarschijnlijk omdat ``classList`` wordt ondersteund vanaf IE10. 
+In IE10 werkt de `box-shadow` nog steeds niet. Dit komt hoogstwaarschijnlijk omdat de `@support` regel pas veel later gesupport wordt. Hierdoor zal de box-shadow alleen zichtbaar zijn in de nieuwere browsers die ook de `@support` regel ondersteunen. Verder werkt het qua javascript functionaliteit wel helemaal. Waarschijnlijk omdat `classList` wordt ondersteund vanaf IE10. 
 
 ![IE10 Test](img/ie10test.png)
 
 ### Major nieuwere browsers
-Om te kijken hoe de moderne browsersupport is, heb ik gekeken hoe de app functioneert op alle moderne browsers. Over het algemeen werkt zo goed als alles. Het grootste probleem met moderne browsers, is dat ze niet altijd hetzelfde omgaan met CSS regels en andere ingebouwde browserstyles meegeven. De styling die de browsers meegeven kunnen in sommige gevallen in de weg staan van de stijling die je zelf als frontender/designer meegeeft. Het is daarom extra belangrijk om er op te letten dat bijvoorbeeld ``:focus`` states altijd duidelijk zijn. 
+Om te kijken hoe de moderne browsersupport is, heb ik gekeken hoe de app functioneert op alle moderne browsers. Over het algemeen werkt zo goed als alles. Het grootste probleem met moderne browsers, is dat ze niet altijd hetzelfde omgaan met CSS regels en andere ingebouwde browserstyles meegeven. De styling die de browsers meegeven kunnen in sommige gevallen in de weg staan van de stijling die je zelf als frontender/designer meegeeft. Het is daarom extra belangrijk om er op te letten dat bijvoorbeeld `:focus` states altijd duidelijk zijn. 
 
 #### Chrome, Opera, Firefox, Edge & Safari
-Op Safari werkt alles qua functionaliteit, op de stijling van het ``input`` element na. De searchbar gaat voor een gedeelte terug naar de originile stijling en verliest de extra hoogte en grotere ``font-size``.
+Op Safari werkt alles qua functionaliteit, op de stijling van het `input` element na. De searchbar gaat voor een gedeelte terug naar de originile stijling en verliest de extra hoogte en grotere `font-size`.
 ![safari input css bug](img/safaricssbug.png)
 
 Op Edge werkt alles zoas het moet horen. Het enige wat qua contrast een probleem kan opleveren voor de accesability is de grijze kleur, die als achtergrond functioneert van de suggesties in de searchbar.
 ![Edge suggestion contrast](img/edgecontrast.png)
+
+## Conclusie
+In principe werkt de website op elk device. Er zijn vooral nog enkele stijl issues die op de website breken op verschillende browsers. De basis functionaliteit zou in theorie via de server moeten werken (dit is nu fake opgelost), maar de flow van de gebruiker is hetzelfde.
+
+De CSS featuredetect op bijvoorbeeld `box-shadow` is niet perse heel zinvol omdat de support heel groot is, maar kon hierdoor wel goed met de `@support` rule spelen om er voor te zorgen dat het contrast van de knoppen altijd goed werkt. Het voornaamste nadeel van de `@support` regel is dat het pas relatief laat gesupport wordt. Eigenlijk is het voornamelijk zinvol om CSS feature detects te doen bij CSS regels die nieuwer zijn dan `@support`.
 
  

@@ -63,13 +63,8 @@ input[type=search]:focus {
     height: 3em;
     margin: 1em 0;
     background-color: #fff;
-    /* border-radius: 50px; */
     overflow: hidden;
     padding: 0.5em;
-}
-
-.hide {
-    display: none;
 }
 
 .letter-list img:first-child {
@@ -91,6 +86,11 @@ input[type=search]:focus {
     height: 1em;
 }
 
+
+.hide {
+    display: none;
+}
+
 /* box shadow */
 .detailpage .main, input[type=search], .letter-list a {
     border: 1px solid #323232;
@@ -107,12 +107,7 @@ a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
         justify-content: space-between;
     }
 
-    .letter-list img:first-child { 
-        float: none;
-    }
-
     .letter-list svg { 
-        float: none;
         align-self: end;
     }
 }
@@ -147,7 +142,7 @@ a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
 }
 
 @supports (box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)) {
-    .detailpage main, input[type=search], .letter-list a {
+    .detailpage .main, input[type=search], .letter-list a {
         border: 1px solid #fff;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
