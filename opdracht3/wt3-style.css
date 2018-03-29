@@ -47,7 +47,7 @@ input[type=search] {
     -moz-transition: all 0.3s ease;
 }
 
-input[type=search]:focus {
+input[type=search]:focus, .letter-list a:focus {
     border-color: red;
     outline: none;
 }
@@ -171,7 +171,7 @@ a.backbutton:hover, .letter-list a:hover, a:focus, input[type=search]:hover, inp
 }
 
 @supports (box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)) {
-    .letter-list a:hover, .letter-list a:focus, input[type=search]:hover, input[type=search]:focus {
+    .letter-list a:hover, input[type=search]:hover {
         border: 1px solid #fff;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
