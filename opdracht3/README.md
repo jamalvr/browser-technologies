@@ -50,9 +50,6 @@ Een layout module bedoelt voor het stijlen en positioneren van elementen. Het vo
 ### [Box-shadow](https://caniuse.com/#search=box-shadow)
 `Box-shadow` wordt ondersteund in alle moderne browser. Alleen oudere versies voor IE9 bieden geen support. Om vooralsnog te spelen met CSS properties en er voor te zorgen dat ook oudere browsers en juiste user experience krijgen, zijn er borders toegevoegd wanneer de box-shadow niet beschikbaar is. Dit is gedaan met de `@support` regel op alle verschillende type `box-shadow` die zijn gebruikt.
 
-![Box-shadow support](img/boxshadowsupport.png)
-![Box-shadow test](img/boxshadowtest.png)
-
 ```
 .detailpage .main, input[type=search], .letter-list a {
     border: 1px solid #323232;
@@ -83,9 +80,6 @@ if (document.documentElement.classList) {
     }
 }
 ```
-
-### Gebruikte Javascript die (bijna) overal wordt ondersteund
-- nog toevoegen
 
 ## Browsersupport
 #### IE8

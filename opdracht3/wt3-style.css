@@ -6,16 +6,13 @@ body {
 .main {
     max-width: 45em;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-a {
+a.backbutton, .letter-list a {
     text-decoration: none;
     color: #323232;
     border: 1px solid #2c2c2c;
-
-    /* IE 9 support "In the separated model, adjacent cells each have their own distinct borders." */
-    border-collapse: separate;
 
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -30,6 +27,10 @@ header {
 h1 {
     font-size: 2em;
     margin: 1em 0;
+}
+
+h2 {
+    margin: 1em 0 0.5em 0;
 }
 
 input[type=search] {
@@ -96,8 +97,7 @@ input[type=search]:focus {
     border: 1px solid #323232;
 }
 
-a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
-    /* Prefix toevoegen voor oudere browsers */
+a.backbutton:hover, .letter-list a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
     border: 1px solid red;
 }
 
@@ -113,6 +113,11 @@ a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
 }
 
 /* Detailpage */
+.detailpage {
+    text-align: center;
+    line-height: 1.4;
+}
+
 .detailpage header {
     position: relative;
 }
@@ -133,12 +138,27 @@ a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
     padding: 0 0 20px 0;
 }
 
+.detailpage .content-header {
+    display: block;
+    margin: auto;
+    border-radius: 300px;
+    max-height: 200px;
+    max-width: 200px;
+    overflow: hidden;
+}
+
 .detailpage img {
-    width: 100%;
+    height: 200px;
 }
 
 .detailpage .content-block {
     padding: 0 1em;
+}
+
+.detailpage ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
 }
 
 @supports (box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)) {
