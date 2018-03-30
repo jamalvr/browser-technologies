@@ -1,12 +1,13 @@
-if (document.documentElement.classList) {
+if (document.documentElement.classList && document.documentElement.setAttribute) {
     
-    input = document.getElementById('search');
+    var input = document.getElementById('search');
+
+    // place 'onkeyup' in the searchbar to prefent errors when this function isn't supported
     input.setAttribute('onkeyup', 'searchFunction()')
 
     function searchFunction() {
         // Declare variables
-        var input, filter, ol, li, span, i;
-        input = document.getElementById('search');
+        var filter, ol, li, span, i;
         filter = input.value.toUpperCase();
         ol = document.getElementById("contacts");
         li = ol.getElementsByTagName('li');
@@ -15,7 +16,7 @@ if (document.documentElement.classList) {
         for (i = 0; i < li.length; i++) {
             span = li[i].getElementsByTagName("span")[0];
             if (span.innerHTML.toUpperCase().indexOf(filter) >= 0) {
-                li[i].classList.add('show'); // Feature detect voor classlist schrijven
+                li[i].classList.add('show');
                 li[i].classList.remove('hide');
             } else {
                 li[i].classList.add('hide');
