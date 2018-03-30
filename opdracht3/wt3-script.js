@@ -1,4 +1,8 @@
 if (document.documentElement.classList) {
+    
+    input = document.getElementById('search');
+    input.setAttribute('onkeyup', 'searchFunction()')
+
     function searchFunction() {
         // Declare variables
         var input, filter, ol, li, span, i;
