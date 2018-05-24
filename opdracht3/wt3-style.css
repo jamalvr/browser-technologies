@@ -48,8 +48,8 @@ input[type=search] {
 }
 
 input[type=search]:focus, .letter-list a:focus, a:focus {
-    border-color: red;
     outline: none;
+    border-color: red;
 }
 
 /* Contact list styling */
@@ -63,9 +63,11 @@ input[type=search]:focus, .letter-list a:focus, a:focus {
     display: block;
     height: 3em;
     margin: 1em 0;
-    background-color: #fff;
+    background-color:#fff;
     overflow: hidden;
     padding: 0.5em;
+    border-radius: 4px;
+    border: 2px solid#fff;
 }
 
 .letter-list img:first-child {
@@ -98,7 +100,7 @@ input[type=search]:focus, .letter-list a:focus, a:focus {
 }
 
 a.backbutton:hover, .letter-list a:hover, a:focus, input[type=search]:hover, input[type=search]:focus {
-    border: 1px solid red;
+    border-color: red;
 }
 
 @supports (display: flex) {
@@ -163,7 +165,7 @@ a.backbutton:hover, .letter-list a:hover, a:focus, input[type=search]:hover, inp
 
 @supports (box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)) {
     .detailpage .main, input[type=search], .letter-list a {
-        border: 1px solid #fff;
+        border: 2px solid #fff;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -172,20 +174,33 @@ a.backbutton:hover, .letter-list a:hover, a:focus, input[type=search]:hover, inp
 
 @supports (box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)) {
     .letter-list a:hover, input[type=search]:hover {
-        border: 1px solid #fff;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        border: 2px solid #fff;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 }
 
 @supports (height: 100vh){
     body {
-        background: -moz-linear-gradient(top, #7db9e8 1%, #7db9e8 1%, #47a0e5 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #7db9e8 1%,#7db9e8 1%,#47a0e5 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #7db9e8 1%,#7db9e8 1%,#47a0e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#47a0e5',GradientType=0 ); /* IE6-9 */
-        font-family: sans-serif;
+        background: #f9fcff; /* Old browsers */
+        background: -moz-linear-gradient(top, #f9fcff 0%, #eaefef 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #f9fcff 0%,#eaefef 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #f9fcff 0%,#eaefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcff', endColorstr='#eaefef',GradientType=0 ); /* IE6-9 */
         height: 100vh;
     }
+}
+
+/* accordion  */
+.accordion-toggle {
+    display: block;
+}
+
+.accordion-content {
+    display: none;
+}
+
+.accordion-content.active {
+    display: block;
 }
