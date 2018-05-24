@@ -27,9 +27,13 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
             var contactNameText = document.createTextNode('Monica de Aarend');
             contactName.appendChild(contactNameText);
 
+            var contentContainer = document.createElement('div');
+            contentContainer.classList.add('content-' + i);
+            contentContainer.appendChild(contactName);
+
             console.log(allContacts[i]);
             console.log(allContacts[i].parentNode);
-            allContacts[i].appendChild(contactName);
+            allContacts[i].appendChild(contentContainer);
             // allContacts[i].parentNode.insertBefore(contactName, allContacts[i]);
         }
     };
@@ -37,34 +41,34 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
     // Execute addContent so it can be used in changeLinks
     addContent();
 
-    // // Listen for click on the document
-    // document.addEventListener('click', function (event) {
+    // Listen for click on the document
+    document.addEventListener('click', function (event) {
     
-    //     //Bail if our clicked element doesn't have the class
-    //     if (!event.target.classList.contains('accordion-toggle')) return;
+        //Bail if our clicked element doesn't have the class
+        if (!event.target.classList.contains('accordion-toggle')) return;
         
-    //     // Get the target content
-    //     var content = document.querySelector(event.target.hash);
-    //     if (!content) return;
+        // Get the target content
+        var content = document.querySelector(event.target.hash);
+        if (!content) return;
         
-    //     // Prevent default link behavior
-    //     event.preventDefault();
+        // Prevent default link behavior
+        event.preventDefault();
         
-    //     // If the content is already expanded, collapse it and quit
-    //     if (content.classList.contains('active')) {
-    //         content.classList.remove('active');
-    //         return;
-    //     }
+        // If the content is already expanded, collapse it and quit
+        if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            return;
+        }
         
-    //     // Get all open accordion content, loop through it, and close it
-    //     var accordions = document.querySelectorAll('.accordion-content.active');
-    //         for (var i = 0; i < accordions.length; i++) {
-    //         accordions[i].classList.remove('active');
-    //     }
+        // Get all open accordion content, loop through it, and close it
+        var accordions = document.querySelectorAll('.accordion-content.active');
+            for (var i = 0; i < accordions.length; i++) {
+            accordions[i].classList.remove('active');
+        }
         
-    //     // Toggle our content
-    //     content.classList.toggle('active');
-    // })
+        // Toggle our content
+        content.classList.toggle('active');
+    })
 }
 
 // Search function
