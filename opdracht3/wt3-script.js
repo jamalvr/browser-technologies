@@ -55,7 +55,7 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
             
             // Content container
             var contentContainer = document.createElement('div');
-            contentContainer.classList.add('content-' + i);
+            contentContainer.classList.add('content-' + i, 'accordion-content', 'active');
             contentContainer.appendChild(contactName);
             contentContainer.appendChild(aboutContactList);
 
@@ -67,33 +67,33 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
     addContent();
 
     // Listen for click on the document
-    document.addEventListener('click', function (event) {
+    // document.addEventListener('click', function (event) {
     
-        //Bail if our clicked element doesn't have the class
-        if (!event.target.classList.contains('accordion-toggle')) return;
+    //     //Bail if our clicked element doesn't have the class
+    //     if (!event.target.classList.contains('accordion-toggle')) return;
         
-        // Get the target content
-        var content = document.querySelector(event.target.hash);
-        if (!content) return;
+    //     // Get the target content
+    //     var content = document.querySelector(event.target.hash);
+    //     if (!content) return;
         
-        // Prevent default link behavior
-        event.preventDefault();
+    //     // Prevent default link behavior
+    //     event.preventDefault();
         
-        // If the content is already expanded, collapse it and quit
-        if (content.classList.contains('active')) {
-            content.classList.remove('active');
-            return;
-        }
+    //     // If the content is already expanded, collapse it and quit
+    //     if (content.classList.contains('active')) {
+    //         content.classList.remove('active');
+    //         return;
+    //     }
         
-        // Get all open accordion content, loop through it, and close it
-        var accordions = document.querySelectorAll('.accordion-content.active');
-            for (var i = 0; i < accordions.length; i++) {
-            accordions[i].classList.remove('active');
-        }
+    //     // Get all open accordion content, loop through it, and close it
+    //     var accordions = document.querySelectorAll('.accordion-content.active');
+    //         for (var i = 0; i < accordions.length; i++) {
+    //         accordions[i].classList.remove('active');
+    //     }
         
-        // Toggle our content
-        content.classList.toggle('active');
-    })
+    //     // Toggle our content
+    //     content.classList.toggle('active');
+    // })
 }
 
 // Search function
@@ -105,15 +105,20 @@ if (document.documentElement.classList && document.documentElement.setAttribute)
     input.setAttribute('onkeyup', 'searchFunction()');
 
     function searchFunction() {
+        
         // Declare variables
         var filter, ol, li, span, i;
         filter = input.value.toUpperCase();
-        ol = document.getElementById("contacts");
-        li = ol.getElementsByTagName('li');
+        ol = document.getElementById('contacts');
+        li = ol.getElementsByClassName('contact');
 
         // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < li.length; i++) {
-            span = li[i].getElementsByTagName("span")[0];
+            span = li[i].getElementsByTagName('span')[0];
+            
+            // console.log(span.innerHTML[i]);
+            console.log(span.innerHTML);
+
             if (span.innerHTML.toUpperCase().indexOf(filter) >= 0) {
                 li[i].classList.add('show');
                 li[i].classList.remove('hide');
@@ -122,5 +127,5 @@ if (document.documentElement.classList && document.documentElement.setAttribute)
                 li[i].classList.remove('show');
             }
         }
-    };
+    }
 };
