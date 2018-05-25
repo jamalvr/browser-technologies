@@ -31,6 +31,7 @@
             addStyle();
             event.preventDefault();
         }
+              
         addStyle();
         el.addEventListener('click', onTabClick, false);
     // }    

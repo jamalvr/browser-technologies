@@ -24,17 +24,42 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
         for (var i = 0; i < allContacts.length; i++) {
             // Naam
             var contactName = document.createElement('h2');
-            var contactNameText = document.createTextNode('Monica de Aarend');
+            var contactNameText = document.createTextNode('Contactgegevens');
             contactName.appendChild(contactNameText);
 
+            // Age
+            var aboutContactAge = document.createElement('li');
+            var aboutContactAgeText = document.createTextNode('Age: 29');
+            aboutContactAge.appendChild(aboutContactAgeText);
+
+            // Day of birth
+            var aboutContactBday = document.createElement('li');
+            var aboutContactBdayText = document.createTextNode('Birthday: 1-1-1989');
+            aboutContactBday.appendChild(aboutContactBdayText);
+
+            // Number
+            var contactNumber = document.createElement('li');
+            var contactNumberLink = document.createElement('a');
+            contactNumber.appendChild(contactNumberLink);
+
+            var contactNumberText = document.createTextNode('Phone: 0612345678');
+            contactNumberLink.appendChild(contactNumberText);
+            
+            contactNumberLink.href = "+31612345678";
+
+            // List
+            var aboutContactList = document.createElement('ul');
+            aboutContactList.appendChild(aboutContactAge);
+            aboutContactList.appendChild(aboutContactBday);
+            aboutContactList.appendChild(contactNumber);
+            
+            // Content container
             var contentContainer = document.createElement('div');
             contentContainer.classList.add('content-' + i);
             contentContainer.appendChild(contactName);
+            contentContainer.appendChild(aboutContactList);
 
-            console.log(allContacts[i]);
-            console.log(allContacts[i].parentNode);
             allContacts[i].appendChild(contentContainer);
-            // allContacts[i].parentNode.insertBefore(contactName, allContacts[i]);
         }
     };
 
