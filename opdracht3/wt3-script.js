@@ -6,7 +6,7 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
 
         for (var i = 0; i < links.length; i++) {
             // change href for the accordion
-            links[i].href = "#content" + i;
+            links[i].href = "#content-" + i;
 
             // Add required class for the accordion toggle
             links[i].classList.add('accordion-toggle');
@@ -55,7 +55,8 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
             
             // Content container
             var contentContainer = document.createElement('div');
-            contentContainer.classList.add('content-' + i, 'accordion-content', 'active');
+            contentContainer.id = 'content-' + i;
+            contentContainer.classList.add('content-' + i, 'accordion-content');
             contentContainer.appendChild(contactName);
             contentContainer.appendChild(aboutContactList);
 
@@ -67,7 +68,7 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
     addContent();
 
     // Listen for click on the document
-    document.addEventListener('click', function (event) {
+    document.getElementById('contacts').addEventListener('click', function (event) {
     
         //Bail if our clicked element doesn't have the class
         if (!event.target.classList.contains('accordion-toggle')) return;
