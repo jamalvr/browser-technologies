@@ -69,16 +69,15 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
 
     // Listen for click on the document
     document.getElementById('contacts').addEventListener('click', function (event) {
-    
-        //Bail if our clicked element doesn't have the class
+        console.log(event.target.hash);
+        
+        // Bail if our clicked element doesn't have the class
         if (!event.target.classList.contains('accordion-toggle')) return;
         
         // Get the target content
         var content = document.querySelector(event.target.hash);
+        // var content = document.querySelector(event.target.hash);
         if (!content) return;
-        
-        // Prevent default link behavior
-        event.preventDefault();
         
         // If the content is already expanded, collapse it and quit
         if (content.classList.contains('active')) {
@@ -95,7 +94,7 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
         // Toggle our content
         content.classList.toggle('active');
     })
-}
+};
 
 // Search function
 if (document.documentElement.classList && document.documentElement.setAttribute) {
