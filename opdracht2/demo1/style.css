@@ -9,6 +9,22 @@ header, .content-wrapper {
     padding: 20px;
 }
 
+.topknop {
+    background-color: #fff;
+    color: orange;
+    border: 2px solid orange;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em 0;
+    display: block;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.topknop:hover {
+    background-color: orange;
+    color: #fff;
+}
+
 .hidden {
     display: none;
 }

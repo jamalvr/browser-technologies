@@ -71,6 +71,24 @@ The first demo worked on three devices that I have tested in the device lab. The
 ![Device 2](screenshots/demo1.2.jpg)
 ![Device 3](screenshots/demo1.3.jpg)
 
+Thanks to the feature detection build in the Javascript, the core functionalities still work, even when Javascript or CSS is not fully supported. When Javascript fails, all the content will be placed in one long column with back to top buttons that are normally hidden.
+
+```
+if (document.body.classList && document.body.classList.contains) {
+    var topKnop = document.getElementsByClassName('topknop');
+
+    for (var i=0; i < topKnop.length; i++) {
+        topKnop[i].classList.add('hidden');
+    }
+    
+    function addStyle() { ... }
+
+    function onTabClick { ... }
+}
+```
+
+#### Demo 2
+
 
 - Per feature: Zoek uit hoe je deze kunt testen. Verzamel uitleg en artikelen. Bouw een (kleine) progressive enhanced demo (zonder extra tools, gewoon in 1 HTML file, zo simpel mogelijk). Test de feature (en fallback) op verschillende browsers en het device lab.Let op: Gebruik van polyfills is niet toegestaan.l
 
