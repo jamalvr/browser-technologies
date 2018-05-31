@@ -98,10 +98,23 @@ De `classList` property haalt de classes op van een DOM element. De `classList` 
 
 Om er voor te zorgen dat de website niet breekt wanneer de `classList` property niet ondersteund wordt, is er een feature detect geschreven. Wanneer `classList` niet te vinden is in `document` valt de functionaliteit terug op de searchbar die via de server werkt.
 
+Per apart onderdeel van de website wordt er een check gedaan zodat de website functioneel niet breekt. Als het ene onderdeel niet werkt, wil niet zeggen dat het andere ook niet meer werkt.
+
+Zodra Javascript werkt, kan je op de namen klikken en zal het uitklappen voor meer informatie. Wanneer Javascript niet werkt of deels werkt, wordt de gebruiker doorgestuurd naar een losse pagina met meer informatie.
+
 ```
 if (document.documentElement.classList) {
     function searchFunction() {...
     }
+}
+
+if (document.querySelectorAll && document.body.classList && document.body.classList.toggle && document.body.classList.contains && document.body.classList.remove) {
+    
+    function changeLinks(changedLinks) { ... }
+
+    function addContent() { ... }
+
+    document.getElementById('contacts').addEventListener('click', function (event) { ... }
 }
 ```
 

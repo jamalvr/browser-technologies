@@ -216,7 +216,6 @@ a.backbutton:hover, .letter-list > li a:hover, a:focus, input[type=search]:hover
     border: 1px solid red;
 }
 
-
 /* accordion  */
 .accordion-toggle {
     display: block;

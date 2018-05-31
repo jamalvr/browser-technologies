@@ -1,5 +1,6 @@
 // Accordion
-if (document.querySelectorAll && document.body.classList && document.body.classList.toggle && document.body.classList.contains && document.body.classList.remove) {
+
+if (document.querySelectorAll && document.body.classList && document.body.classList.toggle && document.body.classList.contains) {
 
     function changeLinks(changedLinks) {
         var links = document.querySelectorAll('#contacts a')

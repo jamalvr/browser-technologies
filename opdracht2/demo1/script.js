@@ -1,38 +1,44 @@
-(function(){
-    // if ('classList' in window) {
-        var el = document.getElementById('tabs');
+if (document.body.classList && document.body.classList.contains) {
+    var el = document.getElementById('tabs');
 
-        function addStyle() {
-            var selectContent = document.querySelectorAll('.content');
-            
-            for (var i=0; i < selectContent.length; i++) {
-                if (selectContent[i].classList.contains('active')) {
-                    selectContent[i].style.display = 'block';
-                } else {
-                    selectContent[i].style.display = 'none';
-                }
-            }  
-            // event.preventDefault();
-        }
+    var topKnop = document.getElementsByClassName('topknop');
 
-        function onTabClick(){
-            var selectActives = document.querySelectorAll('.active');
+    console.log(document.getElementsByClassName('topknop'));
 
-            // deactivate existing active tab and panel
-            for (var i=0; i < selectActives.length; i++){
-                selectActives[i].className = selectActives[i].className.replace(' active', '');
+    for (var i=0; i < topKnop.length; i++) {
+        topKnop[i].classList.add('hidden');
+    }
+
+    function addStyle() {
+        var selectContent = document.querySelectorAll('.content');
+        
+        for (var i=0; i < selectContent.length; i++) {
+            if (selectContent[i].classList.contains('active')) {
+                selectContent[i].style.display = 'block';
+            } else {
+                selectContent[i].style.display = 'none';
             }
+        }  
+        // event.preventDefault();
+    }
 
-            // activate new tab and panel
-            event.target.className += ' active';
-            document.getElementById(event.target.href.split('#')[1]).className += ' active';
+    function onTabClick(){
+        var selectActives = document.querySelectorAll('.active');
 
-            // Start new loop to set the right styles 
-            addStyle();
-            event.preventDefault();
+        // deactivate existing active tab and panel
+        for (var i=0; i < selectActives.length; i++){
+            selectActives[i].className = selectActives[i].className.replace(' active', '');
         }
-              
+
+        // activate new tab and panel
+        event.target.className += ' active';
+        document.getElementById(event.target.href.split('#')[1]).className += ' active';
+
+        // Start new loop to set the right styles 
         addStyle();
-        el.addEventListener('click', onTabClick, false);
-    // }    
-})();
+        event.preventDefault();
+    }
+            
+    addStyle();
+    el.addEventListener('click', onTabClick, false);
+}    
