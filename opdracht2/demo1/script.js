@@ -49,6 +49,17 @@ if (document.documentElement.parentNode) {
     var dialog = document.querySelector('dialog');
 
     if ('open' in dialog) {
+        // Dynamisch de dialog button aanmaken wanneer dialog available is
+        button = document.createElement('button');
+        showText = document.createTextNode('License')
+        button.appendChild(showText);
+        button.id = 'show';
+
+        // dynamische button toevoegen aan de header
+        header = document.getElementById('top');
+        header.appendChild(button);
+
+        // Show & close van de dialog
         document.querySelector('#show').onclick = function () {
             dialog.show();
         };
