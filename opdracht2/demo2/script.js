@@ -1,26 +1,16 @@
-// Get the modal
-var modal = document.getElementById('myModal');
+// Handige bronnen: 
+// https://www.hongkiat.com/blog/html5-dialog-window/
+// http://thenewcode.com/957/Native-Modal-Windows-in-HTML5-Using-the-dialog-Element
+// https://demo.agektmr.com/dialog/
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+// Eerst voor zorgen dat de dialogs werken samen met Javascript
+// Als dialog 
 
-// Get the <span> element that closes the modal
-// Support tot IE9
-var close = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-close.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// Getting the element and being able to show it 
+var dialog = document.querySelector('dialog');
+document.querySelector('#show').onclick = function () {
+    dialog.show();
+};
+document.querySelector('#close').onclick = function () {
+    dialog.close();
+};
