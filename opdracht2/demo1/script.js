@@ -43,13 +43,22 @@ if (document.body.classList && document.body.classList.contains) {
     el.addEventListener('click', onTabClick, false);
 }    
 
-if (window.close && window.show) {
-    var dialog = document.querySelector('dialog');
+// modal met dialog element
+var dialog = document.querySelector('dialog');
+
+if ('open' in dialog) {
     document.querySelector('#show').onclick = function () {
         dialog.show();
     };
-    
     document.querySelector('#close').onclick = function () {
         dialog.close();
     };
+} else {
+    var div = document.createElement('div');
+    
+    // Keep HTML content even in the element changes
+    div.innerHTML = dialog.innerHTML;
+    
+    // Replace the dialog element with div
+    var newDiv = dialog.parentNode.replaceChild(div, dialog);
 }
