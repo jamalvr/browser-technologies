@@ -19,7 +19,6 @@ if (document.body.classList && document.body.classList.contains) {
                 selectContent[i].style.display = 'none';
             }
         }  
-        // event.preventDefault();
     }
 
     function onTabClick(){
@@ -36,9 +35,21 @@ if (document.body.classList && document.body.classList.contains) {
 
         // Start new loop to set the right styles 
         addStyle();
+
         event.preventDefault();
     }
             
     addStyle();
     el.addEventListener('click', onTabClick, false);
 }    
+
+if (window.close && window.show) {
+    var dialog = document.querySelector('dialog');
+    document.querySelector('#show').onclick = function () {
+        dialog.show();
+    };
+    
+    document.querySelector('#close').onclick = function () {
+        dialog.close();
+    };
+}

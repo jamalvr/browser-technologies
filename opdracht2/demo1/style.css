@@ -126,6 +126,21 @@ ul .active, ul .active:hover {
     object-fit: cover;
 }
 
+dialog {
+    min-width: 20em;
+    max-width: 30em;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);
+    padding: 1em;
+    text-align: left;
+}
+
 @supports (object-fit: cover) { 
     .content img {
         max-height: auto;

@@ -21,17 +21,17 @@ ul {
     margin: 0;  
 }
 
-li > a {
+li > button {
     display: block;
     max-height: 5em;
     overflow: hidden;
     margin-bottom: 0.5em;
-
-    /* enhancement */
-    transition: 0.3s;
+    padding: 0;
+    border: none;
+    border-radius: 0.5em;
 }
 
-li > a:hover {
+li > button:hover {
     transform: scale(1.05);
 }
 
