@@ -58,12 +58,12 @@ li > button:hover {
     display: block;
     margin: auto;
 }
-/*   
+  
 .modal:target {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-} */
+}
 
 @supports (object-fit: cover) {
     .modal img {

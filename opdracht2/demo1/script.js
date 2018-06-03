@@ -49,15 +49,15 @@ if (document.documentElement.parentNode) {
     var dialog = document.querySelector('dialog');
 
     if ('open' in dialog) {
-        // Dynamisch de dialog button aanmaken wanneer dialog available is
-        button = document.createElement('button');
-        showText = document.createTextNode('License')
-        button.appendChild(showText);
-        button.id = 'show';
+        // // Dynamisch de dialog button aanmaken wanneer dialog available is
+        // button = document.createElement('button');
+        // showText = document.createTextNode('License')
+        // button.appendChild(showText);
+        // button.id = 'show';
 
-        // dynamische button toevoegen aan de header
-        header = document.getElementById('top');
-        header.appendChild(button);
+        // // dynamische button toevoegen aan de header
+        // header = document.getElementById('top');
+        // header.appendChild(button);
 
         // Show & close van de dialog
         document.querySelector('#show').onclick = function () {
@@ -67,12 +67,28 @@ if (document.documentElement.parentNode) {
             dialog.close();
         };
     } else {
+    // Replace dialog element with div
         var div = document.createElement('div');
-        
         // Keep HTML content even in the element changes
         div.innerHTML = dialog.innerHTML;
-        
         // Replace the dialog element with div
         var newDiv = dialog.parentNode.replaceChild(div, dialog);
+        // Add dialog class with CSS target styling 
+        div.classList.add('dialog');
+        div.id = 'dialog';
+
+    // Close button replacement
+        var closeButton = document.getElementById('close');
+        var closeLink = document.createElement('a');
+        closeButton.parentNode.replaceChild(closeLink, closeButton);
+        closeLink.innerHTML = 'Close';
+        closeLink.href = '#';
+       
+    // Show button replacement
+        var showButton = document.getElementById('show');
+        var showLink = document.createElement('a');
+        showButton.parentNode.replaceChild(showLink, showButton);
+        showLink.innerHTML = 'License';
+        showLink.href = '#dialog';   
     }
 }
