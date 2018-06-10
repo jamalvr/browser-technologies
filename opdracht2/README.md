@@ -119,4 +119,9 @@ The `class="dialog"` adds new styles and shows the modal through `:target` with 
 }
 ```
 
+In different browsers the button and modal have different styling. This also makes it easier to recognize which of the code is working, without breaking functionality.
+
+In Safari the modal looks different than in Chrome:
+![Safari modal](screenshots/safarimodal.jpg)
+
  
