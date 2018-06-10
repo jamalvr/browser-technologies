@@ -1,8 +1,7 @@
 # Browser Technologies
-// Robuuste, toegankelijke websites leren bouwen … 
+At first the whole assignment was divided in two seperate demo's. For the sake of usability and practising feature detection better, I've put them both in one demo.
 
-* [Demo 1 - Tabs](https://jamalvr.github.io/browser-technologies/opdracht2/demo1/1.html)
-* [Demo 2 - Modal](https://jamalvr.github.io/browser-technologies/opdracht2/demo2/2.html#)
+* [Demo 1 - Tabs & Modal](https://jamalvr.github.io/browser-technologies/opdracht2/demo1/1.html)
 
 ## Opdracht 2 - 1, 2, 3 Feature Detectie
 
@@ -64,7 +63,7 @@ ul li {
 ```
 
 ### Device lab
-#### Demo 1
+#### Demo tabs
 The first demo worked on three devices that I have tested in the device lab. The only problem was the `object-fit` css property when used by the windows tablet in the device lab. The images lost their display ratio which distored the images because they where forced to become shorter. This was fixed by adding the `@support` rule and defining fallback properties to define the right height for images when `object-fit` is not supported.
 
 ![Device 1](screenshots/demo1.1.jpg)
@@ -87,20 +86,37 @@ if (document.body.classList && document.body.classList.contains) {
 }
 ```
 
-#### Demo 2
+#### Demo modal
+The second part of the demo is the modal. It appears when you click on the 'license' button that is underneath the title of the website.
 
+For the modal I made use of the `dialog` element that is triggered with JavaScript. Since the browser support for the dialog element is pretty low, I used feature detection to see if the browser support the dialog element.
 
-- Per feature: Zoek uit hoe je deze kunt testen. Verzamel uitleg en artikelen. Bouw een (kleine) progressive enhanced demo (zonder extra tools, gewoon in 1 HTML file, zo simpel mogelijk). Test de feature (en fallback) op verschillende browsers en het device lab.Let op: Gebruik van polyfills is niet toegestaan.l
+![Dialog support](screenshots/caniuse-dialog.png)
 
-- Post je 6 afzonderlijke demo’s op GitHub met uitleg in een README file. Wat is de feature, welke browsers/devices ondersteunen deze wel/niet, hoe zorg je dat de fallback nuttig is?
+I used the following code to check if the browser actually support the dialog element:
 
-criteria
-- 6 features zijn onderzocht en er is een demo gemaakt.
-- De code staat in een repository op GitHub.
-- Een Readme is toegevoegd met, per feature:
--		Een beschrijving van de feature.
--		Bronnen van uitleg en gebruikte artikelen.
--		Welke browsers/devices ondersteunen deze wel/niet.
--		Een beschrijving hoe de fallback werkt.
+```
+if ('open' in dialog) {
+    ...
+} else { 
+    // replace <dialog> element with <div class="dialog">
+}
+```
+
+The `class="dialog"` adds new styles and shows the modal through `:target` with CSS only.
+
+```
+.dialog {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.dialog:target {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+```
 
  
