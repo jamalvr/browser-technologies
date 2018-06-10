@@ -14,7 +14,7 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
         }
 
         return changedLinks;
-    };
+    };  
 
     // Execute changeLinks so all the classes are added for the toggle
     changeLinks();
