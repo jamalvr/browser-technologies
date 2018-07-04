@@ -2,9 +2,13 @@
 
 // Robuuste, toegankelijke websites leren bouwen …
 
+
+
 ## Opdracht 3 - Progressive Enhanced Browser Technologies
 
 **[KLIK HIER - Link naar de demo](https://jamalvr.github.io/browser-technologies/opdracht3/index.html)**
+
+
 
 ## De core funtionaliteit
 
@@ -21,6 +25,8 @@ Om het geheel wat aantrekkelijker te maken is er vervolgens stijling toegevoegd 
 Als kers op de taart is er vervolgens een javascript functie toegevoegd. Met deze functie hoeft te gebruiker niet meer te wachten op de server om te filteren. Dit kan nu live gedaan worden wanneer de gebruiker wat in typt in de search bar.
 
 ![Opbouw](img/opbouw.png)
+
+
 
 ## De features/Browser technologies
 
@@ -127,19 +133,6 @@ if (document.querySelectorAll && document.body.classList && document.body.classL
 }
 ```
 
-Als extra functionaliteit wordt de detailpagina vervangen door een uitlkapfunctie. Dezelfde info die normaal gesproken op een aparte pagina staat, wordt nu meteen aangeroepen wanneer je op een contactpersoon klikt.
-
-Op oudere browsers wordt je simpelweg weer doorverwezen naar de detailpagina.
-
-```
-if (document.querySelectorAll && document.body.classList && document.body.classList.toggle && document.body.classList.contains) { 
-    ... 
-}
-```
-![Edge suggestion contrast](img/accordion.png)
-
-## Browsersupport
-
 #### IE8
 
 Er gaat in IE8 heel wat basic styling en functionaliteit verloren. De Javascript functie werkt niet meer, de box-shadows zijn vervangen door borders en de max-width op het container element met de `margin: auto;` is ook verdwenen. Dit komt waarschijnlijk omdat ik een `main` HTML element heb gebruikt. Verder werkt het qua functionaliteit nog wel. De gebruiker krijgt vooralsnog een lijst met contacten te zien waarmee gefilterd kan worden.
@@ -170,6 +163,8 @@ Op Safari werkt alles qua functionaliteit, op de stijling van het `input` elemen
 Op Edge werkt alles zoas het moet horen. Het enige wat qua contrast een probleem kan opleveren voor de accesability is de grijze kleur, die als achtergrond functioneert van de suggesties in de searchbar.
 ![Edge suggestion contrast](img/edgecontrast.png)
 
+
+
 ## Conclusie
 
 In principe werkt de website op elk device. Er zijn vooral nog enkele stijl issues die op de website breken op verschillende browsers. De basis functionaliteit zou in theorie via de server moeten werken (dit is nu fake opgelost), maar de flow van de gebruiker is hetzelfde.
@@ -177,3 +172,22 @@ In principe werkt de website op elk device. Er zijn vooral nog enkele stijl issu
 De CSS featuredetect op bijvoorbeeld `box-shadow` is niet perse heel zinvol omdat de support heel groot is, maar kon hierdoor wel goed met de `@support` rule spelen om er voor te zorgen dat het contrast van de knoppen altijd goed werkt. Het voornaamste nadeel van de `@support` regel is dat het pas relatief laat gesupport wordt. Eigenlijk is het voornamelijk zinvol om CSS feature detects te doen bij CSS regels die nieuwer zijn dan `@support`.
 
 Progressive enhancement is toegepast op de website. Ik heb er voor gezorgd dat alles los van elkaar werkt en het is stapsgewijs verbeterd. De HTML structuur is netjes opgebouwd zodat er makkelijk CSS en Javascript toegevoegd kan worden.
+
+
+
+## Verwerken van de feedback
+
+Als verbeterpunt van de vorige keer heb ik extra functionaliteiten toegevoegd. Als extra functionaliteit wordt de detailpagina vervangen door een uitlkapfunctie. Dezelfde info die normaal gesproken op een aparte pagina staat, wordt nu meteen aangeroepen wanneer je op een contactpersoon klikt.
+
+Op oudere browsers wordt je simpelweg weer doorverwezen naar de detailpagina. Alle informatie in de accordion wordt nu statisch gegenereerd in Javascript. Wanneer Javascript het niet doet, zal de informatie niet ook al op de homepagina staan, maar kan je het alleen vinden in de detailpagina.
+
+Beide functionaliteiten werken ook los van elkaar en worden in beide gevallen afgevangen door hun HTML counterpart.
+
+```
+if (document.querySelectorAll && document.body.classList && document.body.classList.toggle && document.body.classList.contains) { 
+    ... 
+}
+```
+
+![Edge suggestion contrast](/Users/jamalvanrooijen/Development/browser-technologies/opdracht3/img/accordion.png)
+
